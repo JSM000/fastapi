@@ -14,7 +14,8 @@ async def read_user_me():
 async def read_user(user_id: str):
     return {"user_id": user_id}
 
-# Path parm 받는 방법 / (Path param) : (type) 으로 타입도 선언 가능
+# Path parm 받는 방법
+# (Path param) : (type) 으로 타입도 선언 가능
 @app.get('/pathParam/{item_id}')
 async def pathParam(item_id: int):
     return {"item_id":item_id}
