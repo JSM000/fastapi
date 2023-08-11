@@ -43,18 +43,18 @@ async def query(
     q: Annotated[
         str | None, 
         Query(
-            min_length=3, # 길이의 최솟값
-            max_length=50, # 길이의 최대값
+            min_length=3, # 길이의 최솟값 / 문자열일떄만 사용가능
+            max_length=50, # 길이의 최대값 / 문자열일떄만 사용가능
             pattern="^fixedquery$", # pattern : 정규식 추가 / 구버젼에서는 regex라고 사용
             title = "asefhbzskdfawkejf", # redoc에서 사용? doc에서는 못찾겠음.
             description="Query string ~~", # docs에 표시
             alias="item-query", # 별명 선언 / "q"는 사용 못하게 됨 "-"는 원래 파이썬 변수명으로 사용 못함
             deprecated=True, # 지원 중단된 쿼리임을 docs에 선언 / 동작은 함
             include_in_schema=True,# docs에서 표시되지 않도록 설정 / 동작은 함
-            ge = 0, # item_id >= 0
-            gt = 0, # item_id > 0
-            le = 0, # item_id <= 0
-            lt = 0 # item_id < 0
+            ge = 0, # item_id >= 0 / 숫자형일떄만 사용가능
+            gt = 0, # item_id > 0 / 숫자형일떄만 사용가능
+            le = 0, # item_id <= 0 / 숫자형일떄만 사용가능
+            lt = 0 # item_id < 0 / 숫자형일떄만 사용가능
         ),
     ] = None
 ): 
